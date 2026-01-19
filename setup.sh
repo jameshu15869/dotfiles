@@ -31,6 +31,8 @@ done 2>/dev/null &
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd "$dir"
 
+. setup/os-specific.sh
+
 printf "\nAll done! To finish setting up, you need to manually complete the following\n"
 echo "- configure your terminal and IDEs to use Fira Code Nerd Font Mono (already set up in wezterm)"
 echo "- restart your shell"
