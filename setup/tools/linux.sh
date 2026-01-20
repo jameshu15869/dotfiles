@@ -3,7 +3,7 @@
 printf "\nInstalling tools\n"
 
 echo "- update apt-get"
-sudo apt $APT_FLAGS update >"$OUTPUT"
+sudo apt-get $APT_FLAGS update >"$OUTPUT"
 
 echo "- cargo"
 # cargo is needed for some tools, so we install it first
@@ -11,7 +11,7 @@ echo "- cargo"
 . "$HOME/.cargo/env"
 
 echo "- neovim"
-sudo apt $APT_FLAGS install neovim &>"$OUTPUT"
+sudo apt-get $APT_FLAGS install neovim &>"$OUTPUT"
 
 echo "- fzf"
 git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &>"$OUTPUT"
