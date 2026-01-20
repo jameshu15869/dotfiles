@@ -11,6 +11,9 @@ fi
 echo "- oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended &>/dev/null
 
+# oh-my-zsh will bootstrap a config. let's remove this so it doesn't conflict with stow later on
+rm ~/.zshrc
+
 echo "- zsh-asdf"
 git clone $GIT_FLAGS https://github.com/asdf-vm/asdf.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/asdf &>/dev/null
 

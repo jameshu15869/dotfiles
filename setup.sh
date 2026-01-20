@@ -11,10 +11,12 @@ done
 if $VERBOSE; then
     APT_FLAGS="-y"
     GIT_FLAGS=""
+    STOW_FLAGS="-v"
     OUTPUT="/dev/stdout"
 else
     APT_FLAGS="-qqy"
     GIT_FLAGS="-q"
+    STOW_FLAGS=""
     OUTPUT="/dev/null"
 fi
 
@@ -55,6 +57,7 @@ cd "$dir"
 
 . setup/os-specific.sh
 . setup/shell.sh
+. setup/symlinks.sh
 
 printf "\nAll done! To finish setting up, you need to manually complete the following\n"
 echo "- configure your terminal and IDEs to use Fira Code Nerd Font Mono (already set up in wezterm)"
