@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+# 1. Install bare minimum dependencies (mimic a fresh OS)
+RUN apt-get update && apt-get install -y sudo git curl unzip build-essential
+
+RUN useradd -m -s /bin/bash testuser && \
+    echo "testuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER testuser
+WORKDIR /home/testuser/dotfiles
+
+# 4. Copy your repo into the container
+COPY --chown=testuser:testuser . .
+
+# 5. Run the script by default
+CMD ["./setup.sh"]
