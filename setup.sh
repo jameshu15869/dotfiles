@@ -12,14 +12,17 @@ if $VERBOSE; then
     APT_FLAGS="-y"
     GIT_FLAGS=""
     STOW_FLAGS="-v"
+    SH_FLAGS="-s"
     OUTPUT="/dev/stdout"
 else
     APT_FLAGS="-qqy"
     GIT_FLAGS="-q"
     STOW_FLAGS=""
+    SH_FLAGS=""
     OUTPUT="/dev/null"
 fi
 
+# Guarantee that $USER is set (Not necessarily true in Docker containers)
 if [ -z "$USER" ]; then
     export USER=$(whoami)
 fi
@@ -58,6 +61,7 @@ cd "$dir"
 . setup/os-specific.sh
 . setup/shell.sh
 . setup/symlinks.sh
+. setup/tools.sh
 
 printf "\nAll done! To finish setting up, you need to manually complete the following\n"
 echo "- configure your terminal and IDEs to use Fira Code Nerd Font Mono (already set up in wezterm)"
