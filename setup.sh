@@ -1,5 +1,25 @@
 #!/usr/bin/env bash
 
+VERBOSE=false
+for arg in "$@"; do
+    if [[ "$arg" == "-v" ]] || [[ "$arg" == "--verbose" ]]; then
+        VERBOSE=true
+        shift
+    fi
+done
+
+if $VERBOSE; then
+    APT_FLAGS="-y"
+    OUTPUT="/dev/stdout"
+else
+    OUTPUT="/dev/null"
+    APT_FLAGS="-qqy"
+fi
+
+if [ -z "$USER" ]; then
+    export USER=$(whoami)
+fi
+
 if [[ $(id -u) == 0 ]] && [[ "$SUDO_COMMAND" ]]; then
     echo "sudo detected, aborting"
     echo "Running the script as sudo changes the \$HOME variable, which causes the script to install tools to incorrect paths"

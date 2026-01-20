@@ -4,8 +4,8 @@ printf "\nConfiguring shell\n"
 
 if [[ $OSTYPE != 'darwin'* ]]; then
     echo "- zsh"
-    sudo apt -qq install zsh &>/dev/null
-    sudo chsh -s $(which zsh) "$USER" >/dev/null
+    sudo apt $APT_FLAGS install zsh &>"$OUTPUT"
+    sudo chsh -s $(which zsh) "$USER" >"$OUTPUT"
 fi
 
 echo "- oh-my-zsh"
@@ -27,11 +27,11 @@ echo "- JetBrains Mono"
 
 mkdir -p "$font_path"
 
-curl -sSOl 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip'
+curl -sSOL 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip'
 mkdir JetBrainsMono
 unzip -qq JetBrainsMono.zip -d JetBrainsMono
 rm JetBrainsMono.zip
-cp JetBrainsMono*.ttf "$font_path"
+cp JetBrainsMono/JetBrainsMono*.ttf "$font_path"
 rm -rf JetBrainsMono
 
 if [[ $OSTYPE != 'darwin'* ]]; then

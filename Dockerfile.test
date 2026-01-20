@@ -13,4 +13,4 @@ WORKDIR /home/testuser/dotfiles
 COPY --chown=testuser:testuser . .
 
 # 5. Run the script by default
-CMD ["./setup.sh"]
+CMD ["./setup.sh", "-v"]

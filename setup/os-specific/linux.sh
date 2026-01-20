@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
 printf "\nExecuting Linux-specific setups\n"
-echo "- expect"
-sudo apt -qq install expect &>/dev/null
 echo "- build-essential"
-sudo apt -qq install build-essential &>/dev/null
+sudo apt $APT_FLAGS install build-essential &>"$OUTPUT"
 echo "- fontconfig"
-sudo apt -qq install fontconfig &>/dev/null
+sudo apt $APT_FLAGS install fontconfig &>"$OUTPUT"
 echo "- git"
-sudo apt -qq install git-all &>/dev/null
+sudo apt $APT_FLAGS install git &>"$OUTPUT"
 echo "- curl"
-sudo apt -qq install curl &>/dev/null
+sudo apt $APT_FLAGS install curl &>"$OUTPUT"
 echo "- unzip"
-sudo apt -qq install unzip &>/dev/null
+sudo apt $APT_FLAGS install unzip &>"$OUTPUT"
