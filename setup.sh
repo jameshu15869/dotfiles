@@ -10,10 +10,12 @@ done
 
 if $VERBOSE; then
     APT_FLAGS="-y"
+    GIT_FLAGS=""
     OUTPUT="/dev/stdout"
 else
-    OUTPUT="/dev/null"
     APT_FLAGS="-qqy"
+    GIT_FLAGS="-q"
+    OUTPUT="/dev/null"
 fi
 
 if [ -z "$USER" ]; then
