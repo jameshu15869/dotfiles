@@ -2,8 +2,13 @@ FROM ubuntu:latest
 
 ENV TZ=America/New_York
 
-# 1. Install bare minimum dependencies (mimic a fresh OS)
 RUN apt-get update && apt-get install -y sudo git curl unzip build-essential
+
+# We must set up the Timezone now (This is done on new computer set up but not in containers)
+RUN apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
+    echo "America/New_York" > /etc/timezone && \
+    dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN useradd -m -s /bin/bash testuser && \
     echo "testuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers

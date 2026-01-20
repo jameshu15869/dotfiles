@@ -74,7 +74,7 @@ plugins=(
     git
 
     # I'm NGL these look like you're trying too hard
-    zsh-autosuggestions
+    # zsh-autosuggestions
     fast-syntax-highlighting
 )
 
