@@ -116,4 +116,3 @@ eval "$(starship init zsh)"
 
 # Bob
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-bob use latest

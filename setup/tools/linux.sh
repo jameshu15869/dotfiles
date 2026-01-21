@@ -14,6 +14,7 @@ echo "- neovim (through bob)"
 # sudo apt-get $APT_FLAGS install neovim &>"$OUTPUT"
 (curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash $SH_FLAGS) &>"$OUTPUT"
 bob install latest
+bob use latest
 
 echo "- fzf"
 git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &>"$OUTPUT"
