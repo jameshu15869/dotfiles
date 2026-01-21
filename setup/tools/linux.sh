@@ -10,8 +10,10 @@ echo "- cargo"
 (curl https://sh.rustup.rs -sSf | sh $SH_FLAGS -- -y -q) >"$OUTPUT" 2>"$OUTPUT"
 . "$HOME/.cargo/env"
 
-echo "- neovim"
-sudo apt-get $APT_FLAGS install neovim &>"$OUTPUT"
+echo "- neovim (through bob)"
+# sudo apt-get $APT_FLAGS install neovim &>"$OUTPUT"
+(curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash $SH_FLAGS) &>"$OUTPUT"
+bob install latest
 
 echo "- fzf"
 git clone -q --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &>"$OUTPUT"

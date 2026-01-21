@@ -58,6 +58,9 @@ done 2>/dev/null &
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd "$dir"
 
+# Downloaded tools must be visible for future operations.
+export PATH="$HOME/.local/bin:$PATH"
+
 . setup/os-specific.sh
 . setup/shell.sh
 . setup/symlinks.sh

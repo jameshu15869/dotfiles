@@ -113,3 +113,7 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Bob
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+bob use latest
