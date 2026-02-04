@@ -116,3 +116,49 @@ eval "$(starship init zsh)"
 
 # Bob
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+export NVM_DIR="$HOME/.nvm"
+source "$HOME/.cargo/env"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+. "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/james/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+eval "$(direnv hook bash)"
+
+# bun completions
+[ -s "/home/james/.bun/_bun" ] && source "/home/james/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# source zshrc
+alias sz="source ~/.zshrc"
+
+# create nested files in directories that may not yet exist
+tch() {
+    mkdir -p "$(dirname "$1")" && touch "$1"
+}
+compdef _files tch
+
+# mkdir + cd in one command
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+compdef _files mkcd
+
+source /home/james/.config/broot/launcher/bash/br
