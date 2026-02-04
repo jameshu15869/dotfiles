@@ -123,9 +123,13 @@ vim.keymap.set("n", "<leader>ss", require("substitute").line, {
   noremap = true,
 })
 
--- open vscode command palette with <leader>p
+-- vscode-specific functionality
 vim.keymap.set("n", "<leader>p", function()
   require("vscode").action("workbench.action.showCommands")
+end)
+
+vim.keymap.set("n", "<leader>e", function()
+  require("vscode").action("workbench.action.toggleSidebarVisibility")
 end)
 
 -- enable mini plugins
