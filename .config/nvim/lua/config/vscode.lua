@@ -132,5 +132,9 @@ vim.keymap.set("n", "<leader>e", function()
   require("vscode").action("workbench.action.toggleSidebarVisibility")
 end)
 
+vim.keymap.set("n", "<leader><space>", function()
+  require("vscode").action("periscope.search")
+end)
+
 -- enable mini plugins
 require("mini.ai").setup()
