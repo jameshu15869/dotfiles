@@ -1,8 +1,10 @@
-# I am still messing with Nix so ignore these for now
-
 \.git
 \.gitignore
 \.gitmodules
 /README.md
 /justfile
 /install.sh
+
+# We have to handle vscode separately
+
+vscode
