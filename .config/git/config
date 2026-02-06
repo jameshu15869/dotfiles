@@ -1,0 +1,19 @@
+[user]
+	email = jhudson15869@gmail.com
+	name = James Hu
+[init]
+	defaultBranch = main
+[credential]
+	credentialStore = secretservice
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[core]
+	editor = vim
+[alias]
+	lga = log --all --decorate --graph --oneline
+	ac = !git add -A && git commit
+	can = !git add -A && git commit --amend --no-edit
+	ca = !git add -A && git commit --amend
+	arh = !git add -A && git reset --hard
