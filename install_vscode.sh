@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get the absolute path to the directory where this script is located
 # This ensures the script works even if you run it from a different directory
@@ -13,7 +13,7 @@ else
     TARGET_DIR="$HOME/.config/Code/User"
 fi
 
-# Create the target directory if it doesn't exist 
+# Create the target directory if it doesn't exist
 mkdir -p "$TARGET_DIR"
 
 link_file() {

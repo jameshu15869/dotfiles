@@ -8,3 +8,9 @@
 # We have to handle vscode separately
 
 vscode
+/install_vscode.sh
+
+# We must also handle keyd separately (MacOS does not want this)
+
+keyd
+/setup_keyd.sh
