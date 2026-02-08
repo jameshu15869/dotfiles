@@ -114,6 +114,9 @@ eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# my aliases
+alias miex="iex -S mix"
+
 # Bob
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
