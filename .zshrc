@@ -116,6 +116,7 @@ eval "$(starship init zsh)"
 
 # my aliases
 alias miex="iex -S mix"
+alias c="cargo"
 
 # Bob
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"

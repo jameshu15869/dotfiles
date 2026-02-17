@@ -52,5 +52,13 @@
   {
     "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.view.extension.lisp-repl",
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "alive.loadFile"
   }
 ]
