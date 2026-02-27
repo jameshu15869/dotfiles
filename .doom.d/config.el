@@ -149,3 +149,11 @@
 
 (after! vterm
   (define-key vterm-mode-map (kbd "C-c C-c") #'vterm-send-C-c))
+
+;; Make Cargo and compilation popups take up a big part of the screen
+;; and focus
+;; (disclaimer: from LLM)
+(set-popup-rule! "^\\*\\(cargo\\|compilation\\|rustic-compilation\\)"
+  :size 0.7
+  :select t
+  :quit t)
