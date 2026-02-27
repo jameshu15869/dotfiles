@@ -85,5 +85,7 @@
         "down",
         "backspace",
         "delete"
-    ]
+    ],
+    "l-language-server.trace.server": "verbose",
+    "rice-analyzer.trace.server": "verbose"
 }
