@@ -107,9 +107,8 @@
 
 (defun files/find-file-vertical-split ()
   (interactive)
-  (split-window-right)
-  (other-window 1)
-  (call-interactively #'find-file))
+  (+evil/window-vsplit-and-follow)
+  (call-interactively #'projectile-find-file))
 
 (map! :leader
       :desc "Open file vertical split"
@@ -118,9 +117,8 @@
 
 (defun files/find-file-horizontal-split ()
   (interactive)
-  (split-window-below)
-  (other-window 1)
-  (call-interactively #'find-file))
+  (+evil/window-split-and-follow)
+  (call-interactively #'projectile-find-file))
 
 (map! :leader
       :desc "Open file horizontal split"
