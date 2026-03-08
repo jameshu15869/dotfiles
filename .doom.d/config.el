@@ -158,3 +158,6 @@
     :quit t))
 
 (map! "C-x C-x" #'ace-window)
+
+(map! :v "v" #'er/expand-region
+      :v "V" #'er/contract-region)
