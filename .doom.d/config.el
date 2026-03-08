@@ -156,3 +156,5 @@
     :size 0.7
     :select t
     :quit t))
+
+(map! "C-x C-x" #'ace-window)

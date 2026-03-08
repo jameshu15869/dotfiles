@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(avy-timeout-seconds 0.2)
+ '(evil-snipe-scope 'line)
  '(global-subword-mode t)
  '(global-superword-mode nil)
  '(package-selected-packages '(eglot))
