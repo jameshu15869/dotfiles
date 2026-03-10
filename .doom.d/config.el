@@ -161,3 +161,7 @@
 
 (map! :v "v" #'er/expand-region
       :v "V" #'er/contract-region)
+
+;; without this, {  + enter would add 2 newlines
+(after! smartparens
+  (sp-local-pair 'c++-mode "{" nil :post-handlers nil))
