@@ -14,4 +14,4 @@ cd dotfiles
 
 # Credits
 
-With help from: [Alex Ding's Config](https://github.com/alexander-ding/.dotfiles), [Edward Wibowo's Config](https://github.com/claby2/dotfiles)
+With help from: [Edward Wibowo's Config](https://github.com/claby2/dotfiles)
