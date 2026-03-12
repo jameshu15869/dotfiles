@@ -165,3 +165,12 @@
 ;; without this, {  + enter would add 2 newlines
 (after! smartparens
   (sp-local-pair 'c++-mode "{" nil :post-handlers nil))
+
+(defun new-workspace-with-vterm ()
+  "Create a new workspace with vterm inside the current project"
+  (interactive)
+  (+workspace/new)
+  (+vterm/here nil)
+  )
+(after! persp-mode
+  (map! "C-x TAB t" #'new-workspace-with-vterm))
