@@ -174,3 +174,12 @@
   )
 (after! persp-mode
   (map! "C-x TAB t" #'new-workspace-with-vterm))
+
+(defun do-the-thing ()
+  (when (and (char-equal last-command-event ?\n)
+             (char-equal (char-before (1- (point))) ?{))
+    (let ((inhibit-modification-hooks t)
+          (inhibit-point-motion-hooks t))
+      (indent-according-to-mode)
+      (save-excursion (insert "\n")))))
+(add-hook 'post-self-insert-hook #'do-the-thing)
