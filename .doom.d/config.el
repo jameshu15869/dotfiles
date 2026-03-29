@@ -175,11 +175,19 @@
 (after! persp-mode
   (map! "C-x TAB t" #'new-workspace-with-vterm))
 
-(defun do-the-thing ()
+(defun magic-indentation ()
   (when (and (char-equal last-command-event ?\n)
              (char-equal (char-before (1- (point))) ?{))
     (let ((inhibit-modification-hooks t)
           (inhibit-point-motion-hooks t))
       (indent-according-to-mode)
       (save-excursion (insert "\n")))))
-(add-hook 'post-self-insert-hook #'do-the-thing)
+(add-hook 'post-self-insert-hook #'magic-indentation)
+
+;; make it easier to clone + add as a projectile project
+(add-hook 'magit-post-clone-hook
+          (lambda ()
+            (let ((dir default-directory))
+              (projectile-add-known-project dir)
+              ;; Automatically switch to the project (opens dired/file list)
+              (projectile-switch-project-by-name dir))))
