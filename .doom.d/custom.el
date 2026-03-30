@@ -7,6 +7,8 @@
  '(evil-snipe-scope 'line)
  '(global-subword-mode t)
  '(global-superword-mode nil)
+ '(lsp-inlay-hint-enable t)
+ '(lsp-rust-analyzer-display-closure-return-type-hints t)
  '(package-selected-packages '(eglot))
  '(treemacs-position 'right)
  '(which-key-idle-delay 0.1))
