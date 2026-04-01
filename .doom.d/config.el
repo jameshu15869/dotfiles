@@ -42,7 +42,8 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18))
+;; (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18))
+(setq doom-font (font-spec :family "Monaspace Neon NF" :size 18))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
@@ -191,3 +192,4 @@
               (projectile-add-known-project dir)
               ;; Automatically switch to the project (opens dired/file list)
               (projectile-switch-project-by-name dir))))
+
