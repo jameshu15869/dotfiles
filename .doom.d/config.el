@@ -115,7 +115,6 @@
       :desc "Open file vertical split"
       "f v" #'files/find-file-vertical-split)
 
-
 (defun files/find-file-horizontal-split ()
   (interactive)
   (+evil/window-split-and-follow)
