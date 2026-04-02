@@ -43,7 +43,9 @@
 (setq org-directory "~/org/")
 
 ;; (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18))
-(setq doom-font (font-spec :family "Monaspace Neon NF" :size 18))
+;; unfortunately I don't think it's possible to get the nice texture healing on
+;; emacs: https://github.com/harfbuzz/harfbuzz/discussions/4490#discussioncomment-7566290
+(setq doom-font (font-spec :family "Monaspace Neon Frozen" :size 18))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
