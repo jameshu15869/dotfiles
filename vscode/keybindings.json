@@ -13,12 +13,25 @@
     "command": "workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+h",
+    "key": "ctrl+x h",
     "command": "workbench.action.focusLeftGroup"
   },
+
   {
-    "key": "ctrl+l",
+    "key": "ctrl+x j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+x k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+x l",
     "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "ctrl+x ctrl-x",
+    "command": "workbench.action.focusNextGroup"
   },
   {
     "key": "ctrl+p",
