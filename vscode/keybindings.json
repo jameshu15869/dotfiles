@@ -30,6 +30,22 @@
     "command": "workbench.action.focusRightGroup"
   },
   {
+    "key": "ctrl+x shift-h",
+    "command": "workbench.action.moveActiveEditorGroupLeft"
+  },
+  {
+    "key": "ctrl+x shift-j",
+    "command": "workbench.action.moveActiveEditorGroupDown"
+  },
+  {
+    "key": "ctrl+x shift-k",
+    "command": "workbench.action.moveActiveEditorGroupUp"
+  },
+  {
+    "key": "ctrl+x shift-l",
+    "command": "workbench.action.moveActiveEditorGroupRight"
+  },
+  {
     "key": "ctrl+x ctrl-x",
     "command": "workbench.action.focusNextGroup"
   },
