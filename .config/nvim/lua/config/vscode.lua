@@ -45,7 +45,7 @@ require("lazy").setup({
       opts = {},
       keys = {
         {
-          "s",
+          "gs",
           mode = { "n", "x", "o" },
           function()
             require("flash").jump()
@@ -53,7 +53,7 @@ require("lazy").setup({
           desc = "Flash",
         },
         {
-          "S",
+          "gS",
           mode = { "n", "x", "o" },
           function()
             require("flash").treesitter()
@@ -97,6 +97,13 @@ require("lazy").setup({
     {
       "nvim-mini/mini.nvim",
       version = false,
+    },
+    {
+      "ggandor/leap.nvim",
+      config = function()
+        vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+        vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+      end,
     },
   },
   -- Configure any other settings here. See the documentation for more details.
