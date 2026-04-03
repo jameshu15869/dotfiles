@@ -60,5 +60,12 @@
   {
     "key": "ctrl+shift+'",
     "command": "alive.loadFile"
+  },
+  {
+    "key": "shift+alt+i", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+o", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus"
+  },
   }
 ]
