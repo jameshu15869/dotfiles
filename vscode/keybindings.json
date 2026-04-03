@@ -16,7 +16,6 @@
     "key": "ctrl+x h",
     "command": "workbench.action.focusLeftGroup"
   },
-
   {
     "key": "ctrl+x j",
     "command": "workbench.action.focusBelowGroup"
@@ -95,5 +94,20 @@
   },
   {
     "key": "shift+alt+o", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus"
+  },
+  {
+    "key": "space w d", "command": "workbench.action.closeEditorsAndGroup",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space w v", "command": "workbench.action.splitEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space w s", "command": "workbench.action.splitEditorDown",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+x 1", "command": "workbench.action.closeEditorsInOtherGroups"
   },
 ]
