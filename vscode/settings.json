@@ -31,7 +31,6 @@
         "markdown": false,
         "scminput": false
     },
-    "editor.lineNumbers": "relative",
     "C_Cpp.intelliSenseEngine": "disabled",
     "cmake.options.statusBarVisibility": "visible",
     "zenMode.hideLineNumbers": false,
