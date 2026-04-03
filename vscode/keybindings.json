@@ -80,5 +80,4 @@
   {
     "key": "shift+alt+o", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus"
   },
-  }
 ]
