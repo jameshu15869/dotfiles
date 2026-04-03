@@ -110,4 +110,9 @@
   {
     "key": "ctrl+x 1", "command": "workbench.action.closeEditorsInOtherGroups"
   },
+  {
+    "key": "space space",
+    "command": "workbench.action.quickOpen",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  }
 ]
