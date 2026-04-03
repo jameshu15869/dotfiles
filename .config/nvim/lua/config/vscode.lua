@@ -131,16 +131,35 @@ vim.keymap.set("n", "<leader>ss", require("substitute").line, {
 })
 
 -- vscode-specific functionality
-vim.keymap.set("n", "<leader>p", function()
-  require("vscode").action("workbench.action.showCommands")
+local vscode = require("vscode")
+
+-- these go here because SPC breaks in the command palette
+vim.keymap.set("n", "<leader>wd", function()
+  vscode.call("workbench.action.closeEditorsAndGroup")
 end)
 
-vim.keymap.set("n", "<leader>e", function()
-  require("vscode").action("workbench.action.toggleSidebarVisibility")
+vim.keymap.set("n", "<leader>wv", function()
+  vscode.call("workbench.action.splitEditor")
+end)
+
+vim.keymap.set("n", "<leader>ws", function()
+  vscode.call("workbench.action.splitEditorDown")
 end)
 
 vim.keymap.set("n", "<leader><space>", function()
-  require("vscode").action("periscope.search")
+  vscode.call("workbench.action.quickOpen")
+end)
+
+vim.keymap.set("n", "<leader>/", function()
+  vscode.call("periscope.search")
+end)
+
+vim.keymap.set("n", "<leader>p", function()
+  vscode.action("workbench.action.showCommands")
+end)
+
+vim.keymap.set("n", "<leader>e", function()
+  vscode.action("workbench.action.toggleSidebarVisibility")
 end)
 
 -- enable mini plugins
