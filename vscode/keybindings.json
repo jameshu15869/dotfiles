@@ -2,135 +2,145 @@
 [
   {
     "key": "ctrl+shift+[",
-    "command": "workbench.action.previousEditor"
+    "command": "workbench.action.previousEditor",
   },
   {
     "key": "ctrl+shift+]",
-    "command": "workbench.action.nextEditor"
+    "command": "workbench.action.nextEditor",
   },
   {
     "key": "alt+w",
-    "command": "workbench.action.closeActiveEditor"
+    "command": "workbench.action.closeActiveEditor",
   },
   {
     "key": "ctrl+x h",
-    "command": "workbench.action.focusLeftGroup"
+    "command": "workbench.action.focusLeftGroup",
   },
   {
     "key": "ctrl+x j",
-    "command": "workbench.action.focusBelowGroup"
+    "command": "workbench.action.focusBelowGroup",
   },
   {
     "key": "ctrl+x k",
-    "command": "workbench.action.focusAboveGroup"
+    "command": "workbench.action.focusAboveGroup",
   },
   {
     "key": "ctrl+x l",
-    "command": "workbench.action.focusRightGroup"
+    "command": "workbench.action.focusRightGroup",
   },
   {
     "key": "ctrl+x shift-h",
-    "command": "workbench.action.moveActiveEditorGroupLeft"
+    "command": "workbench.action.moveActiveEditorGroupLeft",
   },
   {
     "key": "ctrl+x shift-j",
-    "command": "workbench.action.moveActiveEditorGroupDown"
+    "command": "workbench.action.moveActiveEditorGroupDown",
   },
   {
     "key": "ctrl+x shift-k",
-    "command": "workbench.action.moveActiveEditorGroupUp"
+    "command": "workbench.action.moveActiveEditorGroupUp",
   },
   {
     "key": "ctrl+x shift-l",
-    "command": "workbench.action.moveActiveEditorGroupRight"
+    "command": "workbench.action.moveActiveEditorGroupRight",
   },
   {
     "key": "ctrl+x ctrl-x",
-    "command": "workbench.action.focusNextGroup"
+    "command": "workbench.action.focusNextGroup",
   },
   {
     "key": "ctrl+p",
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\u0010"
-    }
+      "text": "\u0010",
+    },
   },
   {
     "key": "ctrl+e",
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\u0005"
-    }
+      "text": "\u0005",
+    },
   },
   {
     "key": "ctrl+shift+backspace",
     "command": "workbench.action.tasks.runTask",
-    "args": "Show Video"
+    "args": "Show Video",
   },
   {
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\\\r\n"
+      "text": "\\\r\n",
     },
-    "when": "terminalFocus"
+    "when": "terminalFocus",
   },
   {
     "key": "ctrl+b",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.action.toggleSidebarVisibility",
   },
   {
     "key": "ctrl+'",
-    "command": "workbench.view.extension.lisp-repl"
+    "command": "workbench.view.extension.lisp-repl",
   },
   {
     "key": "ctrl+shift+'",
-    "command": "alive.loadFile"
+    "command": "alive.loadFile",
   },
   {
     "key": "shift+alt+i",
     "command": "editor.action.smartSelect.shrink",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus",
   },
   {
     "key": "shift+alt+o",
     "command": "editor.action.smartSelect.expand",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus",
   },
   {
     "key": "ctrl+x 1",
-    "command": "workbench.action.closeEditorsInOtherGroups"
+    "command": "workbench.action.closeEditorsInOtherGroups",
   },
   {
     "key": "x",
     "command": "magit.discard-at-point",
-    "when": "editorTextFocus && editorLangId == 'magit'"
+    "when": "editorTextFocus && editorLangId == 'magit'",
   },
   {
     "key": "k",
-    "command": "-magit.discard-at-point"
+    "command": "-magit.discard-at-point",
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.focus",
-    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/",
   },
   {
     "key": "ctrl+k",
     "command": "-magit.move-previous-entity",
-    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/",
   },
 
   {
     "key": "[",
     "command": "magit.move-previous-entity",
-    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/",
   },
   {
     "key": "]",
     "command": "magit.move-next-entity",
-    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
-  }
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/",
+  },
+  {
+    "key": "ctrl+n",
+    "when": "codeActionMenuVisible",
+    "command": "selectNextCodeAction",
+  },
+  {
+    "key": "ctrl+p",
+    "when": "codeActionMenuVisible",
+    "command": "selectPrevCodeAction",
+  },
 ]
