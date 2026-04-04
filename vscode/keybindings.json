@@ -163,4 +163,9 @@
     "command": "workbench.action.terminal.scrollDownPage",
     "when": "terminalFocus",
   },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus",
+  },
 ]
