@@ -164,3 +164,14 @@ end)
 
 -- enable mini plugins
 require("mini.ai").setup()
+
+-- Decrease the time it takes to trigger CursorHold (default is 4000ms / 4 seconds)
+-- 300ms is a good sweet spot so it doesn't flash constantly while you navigate
+vim.o.updatetime = 300
+
+-- Tell VS Code to show the hover tooltip when the cursor stops moving
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.fn.VSCodeNotify("editor.action.showHover")
+  end,
+})
