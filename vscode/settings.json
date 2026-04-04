@@ -1,93 +1,97 @@
 {
-    "clangd.path": "/home/james/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd",
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/james/.local/share/bob/nvim-bin/nvim",
-    "terminal.integrated.allowChords": false,
-    "redhat.telemetry.enabled": false,
-    "remote.autoForwardPortsSource": "hybrid",
-    "editor.formatOnSave": true,
-    "C_Cpp.clang_format_fallbackStyle": "Google",
-    // "editor.fontFamily": "JetBrainsMono Nerd Font",
-    "editor.fontFamily": "Monaspace Neon NF",
-    "editor.fontLigatures": true,
-    "workbench.colorTheme": "Kanagawa Dragon",
-    "html.autoClosingTags": true,
-    "emmet.includeLanguages": {
-        "html-eex": "html",
-        "phoenix-heex": "html"
-    },
-    "files.associations": {
-        "*.heex": "phoenix-heex"
-    },
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
-    },
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "cmake.options.statusBarVisibility": "visible",
-    "zenMode.hideLineNumbers": false,
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "rust-analyzer.check.command": "clippy",
-    "claudeCode.preferredLocation": "panel",
-    "workbench.sideBar.location": "right",
-    "[lua]": {
-        "editor.defaultFormatter": "JohnnyMorganz.stylua"
-    },
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "autoHide.autoHidePanel": false,
-    "autoHide.hideOnOpen": true,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "window.zoomLevel": 2,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "vscode-neovim.ctrlKeysForNormalMode": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "h",
-        "i",
-        "j",
-        // We want ctrl-k to go to vscode in normal mode
-        // "k",
-        "l",
-        "m",
-        "o",
-        "r",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-        "/",
-        "]",
-        "right",
-        "left",
-        "up",
-        "down",
-        "backspace",
-        "delete"
-    ],
-    "l-language-server.trace.server": "verbose",
-    "rice-analyzer.trace.server": "verbose",
-    "editor.hover.enabled": "on",
-    "problems.showCurrentInStatus": true,
+  "clangd.path": "/home/james/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/james/.local/share/bob/nvim-bin/nvim",
+  "terminal.integrated.allowChords": false,
+  "redhat.telemetry.enabled": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "editor.formatOnSave": true,
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  // "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "Monaspace Neon NF",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Kanagawa Dragon",
+  "html.autoClosingTags": true,
+  "emmet.includeLanguages": {
+    "html-eex": "html",
+    "phoenix-heex": "html"
+  },
+  "files.associations": {
+    "*.heex": "phoenix-heex"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "cmake.options.statusBarVisibility": "visible",
+  "zenMode.hideLineNumbers": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "rust-analyzer.check.command": "clippy",
+  "claudeCode.preferredLocation": "panel",
+  "workbench.sideBar.location": "right",
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "autoHide.autoHidePanel": false,
+  "autoHide.hideOnOpen": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 2,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vscode-neovim.ctrlKeysForNormalMode": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "h",
+    "i",
+    "j",
+    // We want ctrl-k to go to vscode in normal mode
+    // "k",
+    "l",
+    "m",
+    "o",
+    "r",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "/",
+    "]",
+    "right",
+    "left",
+    "up",
+    "down",
+    "backspace",
+    "delete"
+  ],
+  "l-language-server.trace.server": "verbose",
+  "rice-analyzer.trace.server": "verbose",
+  "editor.hover.enabled": "on",
+  "problems.showCurrentInStatus": true,
+  "vscode-neovim.editorLangIdExclusions": ["magit"],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
