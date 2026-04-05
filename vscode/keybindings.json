@@ -168,4 +168,9 @@
     "command": "workbench.action.togglePanel",
     "when": "terminalFocus",
   },
+  {
+    "key": "ctrl+.",
+    "command": "keyboard-quickfix.openQuickFix",
+    "when": "editorFocus",
+  },
 ]
