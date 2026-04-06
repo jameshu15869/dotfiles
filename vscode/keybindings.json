@@ -173,4 +173,9 @@
     "command": "keyboard-quickfix.openQuickFix",
     "when": "editorFocus",
   },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported",
+  },
 ]
