@@ -2,11 +2,11 @@
 [
   {
     "key": "ctrl+shift+[",
-    "command": "workbench.action.previousEditor",
+    "command": "workbench.action.previousEditorInGroup",
   },
   {
     "key": "ctrl+shift+]",
-    "command": "workbench.action.nextEditor",
+    "command": "workbench.action.nextEditorInGroup",
   },
   {
     "key": "alt+w",
