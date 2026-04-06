@@ -168,3 +168,4 @@ compdef _files mkcd
 source $HOME/.config/broot/launcher/bash/br
 
 export PATH="/Users/school/.duckdb/cli/latest":$PATH
+alias lg="lazygit"
