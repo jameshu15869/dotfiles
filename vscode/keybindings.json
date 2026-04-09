@@ -162,6 +162,16 @@
     "when": "terminalFocus",
   },
   {
+    "key": "cmd+e",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus",
+  },
+  {
+    "key": "cmd+y",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus",
+  },
+  {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.scrollUpPage",
     "when": "terminalFocus",
