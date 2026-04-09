@@ -162,6 +162,13 @@ vim.keymap.set("n", "<leader>e", function()
   vscode.action("workbench.action.toggleSidebarVisibility")
 end)
 
+vim.keymap.set("n", "[e", function()
+  vscode.action("editor.action.marker.prev")
+end)
+vim.keymap.set("n", "]e", function()
+  vscode.action("editor.action.marker.next")
+end)
+
 -- enable mini plugins
 require("mini.ai").setup()
 
