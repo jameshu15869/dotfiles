@@ -9,6 +9,14 @@
     "command": "workbench.action.nextEditorInGroup",
   },
   {
+    "key": "cmd+shift+[",
+    "command": "workbench.action.previousEditorInGroup",
+  },
+  {
+    "key": "cmd+shift+]",
+    "command": "workbench.action.nextEditorInGroup",
+  },
+  {
     "key": "alt+w",
     "command": "workbench.action.closeActiveEditor",
   },
