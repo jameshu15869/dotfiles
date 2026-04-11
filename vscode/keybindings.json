@@ -73,6 +73,14 @@
     },
   },
   {
+    "key": "ctrl+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0007",
+    },
+    "when": "terminalFocus",
+  },
+  {
     "key": "ctrl+shift+backspace",
     "command": "workbench.action.tasks.runTask",
     "args": "Show Video",
