@@ -23,7 +23,7 @@ keybinds clear-defaults=true {
         bind "n" { NewPane; SwitchToMode "locked"; }
         bind "p" { SwitchToMode "normal"; }
         bind "v" { NewPane "right"; SwitchToMode "locked"; }
-        bind "s" { NewPane "stacked"; SwitchToMode "locked"; }
+        bind "t" { NewPane "stacked"; SwitchToMode "locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
