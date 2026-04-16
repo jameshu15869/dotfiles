@@ -63,8 +63,8 @@
     "f",
     "h",
     "i",
-    "j",
-    // We want ctrl-k to go to vscode in normal mode
+    // We want ctrl-k and ctrl-j to go to vscode in normal mode
+    // "j",
     // "k",
     "l",
     "m",
