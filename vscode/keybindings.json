@@ -1,19 +1,19 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "ctrl+shift+[",
+    "key": "ctrl+[",
     "command": "workbench.action.previousEditorInGroup",
   },
   {
-    "key": "ctrl+shift+]",
+    "key": "ctrl+]",
     "command": "workbench.action.nextEditorInGroup",
   },
   {
-    "key": "cmd+shift+[",
+    "key": "cmd+[",
     "command": "workbench.action.previousEditorInGroup",
   },
   {
-    "key": "cmd+shift+]",
+    "key": "cmd+]",
     "command": "workbench.action.nextEditorInGroup",
   },
   {
@@ -203,5 +203,13 @@
     "key": "ctrl+w",
     "command": "-workbench.action.terminal.killEditor",
     "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported",
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "workbench.action.moveEditorLeftInGroup",
+  },
+  {
+    "key": "ctrl+shift+]",
+    "command": "workbench.action.moveEditorRightInGroup",
   },
 ]
