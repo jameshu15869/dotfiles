@@ -94,7 +94,7 @@ bindsym $mod+Ctrl+v split h
 bindsym $mod+Ctrl+s split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -215,4 +215,11 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 
 # keyring for vscode
 exec --no-startup-id eval $(gnome-keyring-daemon --start --components=secrets,ssh)
+
+bindsym $mod+f exec firefox
+bindsym $mod+b exec brave-browser
+bindsym $mod+x exec google-chrome
+bindsym $mod+c exec code
+bindsym $mod+m exec gtk-launch WebApp-AppleMusic4700
+bindsym $mod+o exec org.kde.okular.desktop
 
