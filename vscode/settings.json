@@ -98,4 +98,7 @@
   "workbench.colorCustomizations": {
     "tab.activeBorderTop": "#00ff00",
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
 }
