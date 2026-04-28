@@ -101,4 +101,8 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.moveEditorLeftInGroup",
+    "workbench.action.moveEditorRightInGroup",
+  ],
 }
