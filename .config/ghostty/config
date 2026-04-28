@@ -48,3 +48,5 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 font-family = "Monaspace Neon NF"
+shell-integration="fish"
+command = "/usr/bin/env fish"
