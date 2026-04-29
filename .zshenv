@@ -3,3 +3,4 @@ path=(
     $HOME/.cargo/bin
     $path
 )
+. "$HOME/.cargo/env"
