@@ -170,3 +170,6 @@ source $HOME/.config/broot/launcher/bash/br
 export PATH="/Users/school/.duckdb/cli/latest":$PATH
 alias lg="lazygit"
 alias zj="zellij"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
