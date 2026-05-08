@@ -220,4 +220,8 @@
     "key": "ctrl+shift+]",
     "command": "workbench.action.moveEditorRightInGroup",
   },
+  {
+    "key": "ctrl+k ctrl+p",
+    "command": "workbench.action.openRecent",
+  }
 ]
