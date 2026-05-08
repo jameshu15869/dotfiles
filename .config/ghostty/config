@@ -50,3 +50,26 @@
 font-family = "Monaspace Neon NF"
 shell-integration="fish"
 command = "/usr/bin/env fish"
+
+# Tab management
+keybind = ctrl+g>t=activate_key_table:tabs
+
+keybind = tabs/n=new_tab
+keybind = chain=deactivate_key_table
+keybind = tabs/d=close_tab
+keybind = chain=deactivate_key_table
+keybind = tabs/escape=deactivate_key_table
+
+# Window management
+keybind = ctrl+g>w=activate_key_table:windows
+
+keybind = windows/s=new_split:down
+keybind = chain=deactivate_key_table
+keybind = windows/v=new_split:right
+keybind = chain=deactivate_key_table
+keybind = windows/escape=deactivate_key_table
+
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+k=goto_split:up
+keybind = alt+j=goto_split:down
