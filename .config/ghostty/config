@@ -67,6 +67,8 @@ keybind = windows/s=new_split:down
 keybind = chain=deactivate_key_table
 keybind = windows/v=new_split:right
 keybind = chain=deactivate_key_table
+keybind = windows/d=close_surface
+keybind = chain=deactivate_key_table
 keybind = windows/escape=deactivate_key_table
 
 keybind = alt+h=goto_split:left
