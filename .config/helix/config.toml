@@ -1,4 +1,7 @@
 theme = "gruvbox_dark_hard"
 
 [editor.file-picker]
-hidden=false
+hidden = false
+
+[editor]
+bufferline = "multiple"
