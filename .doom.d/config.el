@@ -194,3 +194,12 @@
               ;; Automatically switch to the project (opens dired/file list)
               (projectile-switch-project-by-name dir))))
 
+(map! :after smerge-mode
+      :map smerge-mode-map
+      :prefix "C-c m"  ;; your custom prefix
+      "n" #'smerge-next
+      "p" #'smerge-prev
+      "u" #'smerge-keep-upper
+      "l" #'smerge-keep-lower
+      "a" #'smerge-keep-all
+      "RET" #'smerge-keep-current)
