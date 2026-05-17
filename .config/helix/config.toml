@@ -5,3 +5,4 @@ hidden = false
 
 [editor]
 bufferline = "multiple"
+cursorline = true
