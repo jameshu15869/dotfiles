@@ -203,3 +203,5 @@
       "l" #'smerge-keep-lower
       "a" #'smerge-keep-all
       "RET" #'smerge-keep-current)
+
+(add-hook! 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
