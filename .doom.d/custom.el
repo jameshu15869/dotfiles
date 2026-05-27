@@ -9,6 +9,8 @@
  '(global-superword-mode nil)
  '(lsp-inlay-hint-enable t)
  '(lsp-rust-analyzer-display-closure-return-type-hints t)
+ '(org-agenda-files '("~/Dropbox/org/trip.org"))
+ '(org-export-with-broken-links 'mark)
  '(package-selected-packages '(eglot))
  '(treemacs-position 'right)
  '(which-key-idle-delay 0.1))
