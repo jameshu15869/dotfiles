@@ -147,6 +147,15 @@
       "C-x k" #'evil-window-up
       "C-x l" #'evil-window-right)
 
+(map! :leader
+      (:prefix ("w" . "window")
+       :desc "Delete window" "q" #'+workspace/close-window-or-workspace))
+;; Unmap default so we can build good muscle memory
+(map! :leader
+      (:prefix ("w" . "window")
+       :desc "Delete window" "q" #'delete-window
+       "d" nil))
+
 (after! vterm
   (define-key vterm-mode-map (kbd "C-c C-c") #'vterm-send-C-c))
 
