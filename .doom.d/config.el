@@ -83,7 +83,7 @@
        :desc "Projectile vterm" "v" #'projectile-run-vterm))
 
 (map! :leader
-      (:prefix-map ("TAB" . "workspace")
+      (:prefix ("TAB" . "workspace")
        :desc "Other workspace" "TAB" #'+workspace/other
        :desc "Display" "`" #'+workspace/display))
 
@@ -93,8 +93,8 @@
   (save-some-buffers t)) ; t = save all without asking
 (advice-add #'doom/reload :before #'my/save-all-buffers-before-doom-reload)
 
-(map! :n "C-}" #'centaur-tabs-forward
-      :n "C-{" #'centaur-tabs-backward)
+(map! "C-}" #'centaur-tabs-forward
+      "C-{" #'centaur-tabs-backward)
 
 (map!
  :leader
@@ -139,9 +139,7 @@
 ;; Terminal movement commands while in insert or normal mode
 (after! persp-mode
   (map! "C-x TAB" doom-leader-workspace-map))
-(map! :map (evil-normal-state-map
-            evil-insert-state-map
-            evil-visual-state-map)
+(map! :nvi
       "C-x h" #'evil-window-left
       "C-x j" #'evil-window-down
       "C-x k" #'evil-window-up
