@@ -6,3 +6,12 @@ hidden = false
 [editor]
 bufferline = "multiple"
 cursorline = true
+
+[keys.normal.space]
+space = "file_picker"
+
+[keys.normal.space.q]
+q = ":qa"
+
+[keys.normal.space.f]
+s = ":wa"
