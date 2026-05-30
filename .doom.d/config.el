@@ -212,3 +212,8 @@
       "RET" #'smerge-keep-current)
 
 (add-hook! 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
+
+(after! avy
+  (map! :leader
+        :desc "Avy goto word"
+        "g w" #'avy-goto-word-0))
