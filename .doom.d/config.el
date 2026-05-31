@@ -215,3 +215,6 @@
 
 (after! avy
   (map! :n "gw" #'evil-avy-goto-word-0))
+
+(setq vterm-shell (or (executable-find "fish")
+                      (executable-find "bash")))
