@@ -218,3 +218,5 @@
 
 (setq vterm-shell (or (executable-find "fish")
                       (executable-find "bash")))
+
+(setq doom-theme 'doom-gruvbox)
