@@ -222,3 +222,22 @@
                       (executable-find "bash")))
 
 (setq doom-theme 'doom-gruvbox)
+
+;; force commands like find-file-other-window to always
+;; split vertically
+(setq split-width-threshold 1
+      split-height-threshold nil)
+
+(defun my/preview-raw-content (url)
+  "Download a raw content file via URL and open"
+  (interactive "sEnter raw content URL: ")
+  (let ((temp-file (make-temp-file "cloned-content-" nil)))
+    (condition-case err
+        (progn
+          (url-copy-file url temp-file t)
+          (find-file temp-file)
+          (message "Successfully previewing content"))
+      (t
+       (when (file-exists-p temp-file)
+         (delete-file temp-file))
+       (message "Failed to preview: %s" (error-message-string err))))))
