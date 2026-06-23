@@ -78,6 +78,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(load! "pkg/magit.el")
+
 (map! :leader
       (:prefix ("o" . "open")
        :desc "Projectile vterm" "v" #'projectile-run-vterm))
