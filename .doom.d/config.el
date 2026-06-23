@@ -185,9 +185,6 @@
 (map! :v "v" #'er/expand-region
       :v "V" #'er/contract-region)
 
-;; without this, {  + enter would add 2 newlines
-(after! smartparens
-  (sp-local-pair 'c++-mode "{" nil :post-handlers nil))
 
 (defun new-workspace-with-vterm ()
   "Create a new workspace with vterm inside the current project"
@@ -197,15 +194,6 @@
   )
 (after! persp-mode
   (map! "C-x TAB t" #'new-workspace-with-vterm))
-
-(defun magic-indentation ()
-  (when (and (char-equal last-command-event ?\n)
-             (char-equal (char-before (1- (point))) ?{))
-    (let ((inhibit-modification-hooks t)
-          (inhibit-point-motion-hooks t))
-      (indent-according-to-mode)
-      (save-excursion (insert "\n")))))
-(add-hook 'post-self-insert-hook #'magic-indentation)
 
 ;; make it easier to clone + add as a projectile project
 (add-hook 'magit-post-clone-hook
@@ -224,8 +212,6 @@
       "l" #'smerge-keep-lower
       "a" #'smerge-keep-all
       "RET" #'smerge-keep-current)
-
-(add-hook! 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
 (after! avy
   (map! :n "gw" #'evil-avy-goto-word-0))
