@@ -93,20 +93,34 @@
   (save-some-buffers t)) ; t = save all without asking
 (advice-add #'doom/reload :before #'my/save-all-buffers-before-doom-reload)
 
-(map! "C-}" #'centaur-tabs-forward
-      "C-{" #'centaur-tabs-backward)
+
 
 (map!
  :leader
  :desc "Save all buffers (silent)"
  "f s" (lambda () (interactive) (save-some-buffers t)))
 
-(after! centaur-tabs
-  (dotimes (i 9)
-    (map! :n (format "M-%d" i)
-          `(lambda ()
-             (interactive)
-             (centaur-tabs-select-visible-nth-tab ,i)))))
+(defun my/set-tab-line-theme ()
+  (let ((active-tab-highlight-font "#00ff00"))
+    (set-face-attribute 'tab-line-tab-current nil
+			:underline active-tab-highlight-font
+			)))
+
+(use-package! tab-line
+  :hook (after-init-hook . global-tab-line-mode)
+  :config
+  (my/set-tab-line-theme)
+  (map! "C-}" #'tab-line-switch-to-next-tab)
+  (map! "C-{" #'tab-line-switch-to-prev-tab))
+
+;; (after! centaur-tabs
+;;   (map! "C-}" #'centaur-tabs-forward
+;;         "C-{" #'centaur-tabs-backward)
+;;   (dotimes (i 9)
+;;     (map! :n (format "M-%d" i)
+;;           `(lambda ()
+;;              (interactive)
+;;              (centaur-tabs-select-visible-nth-tab ,i)))))
 
 (defun files/find-file-vertical-split ()
   (interactive)
