@@ -155,15 +155,21 @@
       :desc "Open file horizontal split"
       "f h" #'files/find-file-horizontal-split)
 
-(set-evil-initial-state! 'vterm-mode 'insert)
 
 (defun my/vterm-auto-insert-state (&rest _)
   (when (and (eq major-mode 'vterm-mode)
              (not (evil-insert-state-p)))
     (evil-insert-state)))
 
-(add-hook 'window-selection-change-functions #'my/vterm-auto-insert-state)
-(add-hook 'window-buffer-change-functions #'my/vterm-auto-insert-state)
+;; (set-evil-initial-state! 'vterm-mode 'insert)
+;; (add-hook 'window-selection-change-functions #'my/vterm-auto-insert-state)
+;; (add-hook 'window-buffer-change-functions #'my/vterm-auto-insert-state)
+
+(after! vterm
+  (remove-hook 'vterm-mode-hook #'mode-line-invisible-mode))
+
+(after! eshell
+  (remove-hook 'eshell-mode-hook #'mode-line-invisible-mode))
 
 ;; Terminal movement commands while in insert or normal mode
 (after! persp-mode
@@ -184,16 +190,16 @@
        "d" nil))
 
 (after! vterm
-  (define-key vterm-mode-map (kbd "C-c C-c") #'vterm-send-C-c))
+  (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert))
 
 ;; Make Cargo and compilation popups take up a big part of the screen
 ;; and focus
 ;; (disclaimer: from LLM)
 (after! (compile rustic)
   (set-popup-rule! "^\\*\\(cargo\\|compilation\\|rustic-compilation\\)"
-    :size 0.7
-    :select t
-    :quit t))
+                   :size 0.7
+                   :select t
+                   :quit t))
 
 (map! "C-x C-x" #'ace-window)
 
