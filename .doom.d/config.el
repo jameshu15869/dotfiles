@@ -254,3 +254,5 @@
        (when (file-exists-p temp-file)
          (delete-file temp-file))
        (message "Failed to preview: %s" (error-message-string err))))))
+
+(setq projectile-indexing-method 'alien)
