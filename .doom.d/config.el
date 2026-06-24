@@ -113,10 +113,23 @@
   :config
   (my/set-tab-line-theme)
   (map! "C-}" #'tab-line-switch-to-next-tab)
-  (map! "C-{" #'tab-line-switch-to-prev-tab))
+  (map! "C-{" #'tab-line-switch-to-prev-tab)
+  (defun my/tab-line-select-visible-nth-tab (n)
+    "Tab to switch to, 1-indexed. Will truncate to number of buffers in window."
+    (let* ((tabs (tab-line-tabs-fixed-window-buffers))
+           (tab-index (1- (min n (length tabs))))
+           (candidate-tab (nth tab-index tabs)))
+      (when candidate-tab
+        (switch-to-buffer candidate-tab))))
+  (dotimes (i 9)
+    (message (format "hi: %d" i))
+    (map! :n (format "M-%d" i)
+          `(lambda ()
+             (interactive)
+             (my/tab-line-select-visible-nth-tab ,i)))))
 
 ;; (after! centaur-tabs
-;;   (map! "C-}" #'centaur-tabs-forward
+;;   (map!) "C-}" #'centaur-tabs-forward
 ;;         "C-{" #'centaur-tabs-backward)
 ;;   (dotimes (i 9)
 ;;     (map! :n (format "M-%d" i)
