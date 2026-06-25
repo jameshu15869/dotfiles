@@ -123,7 +123,7 @@
         (switch-to-buffer candidate-tab))))
   (dotimes (i 9)
     (message (format "hi: %d" i))
-    (map! :n (format "M-%d" i)
+    (map! :nvi (format "M-%d" i)
           `(lambda ()
              (interactive)
              (my/tab-line-select-visible-nth-tab ,i)))))
@@ -211,8 +211,7 @@
   "Create a new workspace with vterm inside the current project"
   (interactive)
   (+workspace/new)
-  (+vterm/here nil)
-  )
+  (+vterm/here nil))
 (after! persp-mode
   (map! "C-x TAB t" #'new-workspace-with-vterm))
 
