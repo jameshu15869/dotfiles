@@ -263,3 +263,20 @@
 (setq projectile-indexing-method 'alien)
 
 (map! :nvi "M-w" 'kill-current-buffer)
+
+(defun my/run-python-same-window ()
+  (interactive)
+  (run-python)
+  (switch-to-buffer (process-buffer (python-shell-get-process))))
+
+(after! comint (map! :map comint-mode-map
+                     :i "C-p" #'comint-previous-input
+                     :i "C-n" #'comint-next-input))
+
+(after! eshell (map! :map eshell-mode-map
+                     :i "C-p" #'eshell-previous-matching-input-from-input
+                     :i "C-n" #'eshell-next-matching-input-from-input))
+
+;; corfu messes with C-p C-n for REPL/shell history
+(dolist (hook '(inferior-python-mode-hook eshell-mode-hook))
+  (add-hook hook (lambda () (corfu-mode -1))))
