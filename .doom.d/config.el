@@ -197,9 +197,9 @@
 ;; (disclaimer: from LLM)
 (after! (compile rustic)
   (set-popup-rule! "^\\*\\(cargo\\|compilation\\|rustic-compilation\\)"
-                   :size 0.7
-                   :select t
-                   :quit t))
+    :size 0.7
+    :select t
+    :quit t))
 
 (map! "C-x C-x" #'ace-window)
 
@@ -262,3 +262,5 @@
        (message "Failed to preview: %s" (error-message-string err))))))
 
 (setq projectile-indexing-method 'alien)
+
+(map! :nvi "M-w" 'kill-current-buffer)
