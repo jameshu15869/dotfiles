@@ -1,3 +1,4 @@
+let mapleader=" "
 set VimEverywhere
 
 Plug 'vim-scripts/argtextobj.vim'
@@ -11,3 +12,15 @@ map <silent> ge <Plug>CamelCaseMotion_ge
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'justinmk/vim-sneak'
+
+
+" match doom emacs
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>ww <C-w>w
+nmap <leader>wv <Action>(SplitVertically)
+nmap <leader>ws <Action>(SplitHorizontally)
+nmap <leader>wq <Action>(Unsplit)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
