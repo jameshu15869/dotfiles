@@ -1,5 +1,6 @@
 let mapleader=" "
-set VimEverywhere
+" pending update https://github.com/TheBlob42/idea-which-key/issues/113
+" set which-key
 
 Plug 'vim-scripts/argtextobj.vim'
 
@@ -11,8 +12,7 @@ map <silent> ge <Plug>CamelCaseMotion_ge
 
 Plug 'machakann/vim-highlightedyank'
 
-Plug 'justinmk/vim-sneak'
-
+set sneak
 
 " match doom emacs
 nnoremap <leader>wh <C-w>h
@@ -20,7 +20,9 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>ww <C-w>w
-nmap <leader>wv <Action>(SplitVertically)
-nmap <leader>ws <Action>(SplitHorizontally)
-nmap <leader>wq <Action>(Unsplit)
-nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wq <C-w>c
+nnoremap <leader>wm <C-w>x
+map [e <Action>(GotoPreviousError)
+map ]e <Action>(GotoNextError)
