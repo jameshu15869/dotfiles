@@ -26,3 +26,4 @@ nnoremap <leader>wq <C-w>c
 nnoremap <leader>wm <C-w>x
 map [e <Action>(GotoPreviousError)
 map ]e <Action>(GotoNextError)
+map gw <Action>(AceWordAction)
