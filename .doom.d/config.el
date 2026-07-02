@@ -79,6 +79,7 @@
 ;; they are implemented.
 
 (load! "pkg/magit.el")
+(load! "pkg/denote.el")
 
 (map! :leader
       (:prefix ("o" . "open")
