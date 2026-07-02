@@ -282,3 +282,8 @@
 ;; corfu messes with C-p C-n for REPL/shell history
 (dolist (hook '(inferior-python-mode-hook eshell-mode-hook))
   (add-hook hook (lambda () (corfu-mode -1))))
+
+(after! org
+  (map! :map org-mode-map
+        :m "j" #'evil-next-visual-line
+        :m "k" #'evil-previous-visual-line))
