@@ -109,9 +109,8 @@
 			)))
 
 (use-package! tab-line
-  :hook (after-init-hook . global-tab-line-mode)
+  :hook (after-init . global-tab-line-mode)
   :config
-  (my/set-tab-line-theme)
   (map! "C-}" #'tab-line-switch-to-next-tab)
   (map! "C-{" #'tab-line-switch-to-prev-tab)
   (defun my/tab-line-select-visible-nth-tab (n)
@@ -121,6 +120,7 @@
            (candidate-tab (nth tab-index tabs)))
       (when candidate-tab
         (switch-to-buffer candidate-tab))))
+  (my/set-tab-line-theme)
   (dotimes (i 9)
     (message (format "hi: %d" i))
     (map! :nvi (format "M-%d" i)
@@ -239,7 +239,9 @@
 (setq vterm-shell (or (executable-find "fish")
                       (executable-find "bash")))
 
-(setq doom-theme 'doom-gruvbox)
+;; (setq doom-theme 'doom-gruvbox)
+;; (setq doom-theme 'modus-vivendi)
+(setq doom-theme 'doom-tokyo-night)
 
 ;; force commands like find-file-other-window to always
 ;; split vertically
