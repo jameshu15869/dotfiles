@@ -27,3 +27,4 @@ nnoremap <leader>wm <C-w>x
 map [e <Action>(GotoPreviousError)
 map ]e <Action>(GotoNextError)
 map gw <Action>(AceWordAction)
+map <leader><leader> <Action>(GotoFile)
