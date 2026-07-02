@@ -26,4 +26,6 @@
   (add-hook! 'with-editor-finish-query-functions #'my/wrap-body)
   ;; (add-hook! 'with-editor-finish-query-functions #'my/test-skeleton)
   (add-hook! 'git-commit-mode-hook #'display-fill-column-indicator-mode)
-  (map! :map 'magit-mode-map :n "z u" #'magit-section-up))
+  (map! :map 'magit-mode-map :n "z u" #'magit-section-up
+        :map 'magit-mode-map :n "C-j" #'magit-section-forward-sibling
+        :map 'magit-mode-map :n "C-k" #'magit-section-backward-sibling))
