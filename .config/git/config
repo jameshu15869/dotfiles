@@ -17,3 +17,7 @@
 	can = !git add -A && git commit --amend --no-edit
 	ca = !git add -A && git commit --amend
 	arh = !git add -A && git reset --hard
+[url "https://invent.kde.org/"]
+	insteadOf = kde:
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = kde:
