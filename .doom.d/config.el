@@ -288,3 +288,8 @@
   (map! :map org-mode-map
         :m "j" #'evil-next-visual-line
         :m "k" #'evil-previous-visual-line))
+
+(use-package! super-save
+  :ensure t
+  :config
+  (super-save-mode +1))
