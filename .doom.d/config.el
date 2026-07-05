@@ -234,8 +234,7 @@
       "a" #'smerge-keep-all
       "RET" #'smerge-keep-current)
 
-(after! avy
-  (map! :n "g w" #'evil-avy-goto-word-0))
+(map! :n "g w" #'evil-avy-goto-word-0)
 
 (setq vterm-shell (or (executable-find "fish")
                       (executable-find "bash")))
