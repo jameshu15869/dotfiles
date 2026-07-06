@@ -96,8 +96,6 @@
   (save-some-buffers t)) ; t = save all without asking
 (advice-add #'doom/reload :before #'my/save-all-buffers-before-doom-reload)
 
-
-
 (map!
  :leader
  :desc "Save all buffers (silent)"
@@ -155,6 +153,24 @@
 (map! :leader
       :desc "Open file horizontal split"
       "f h" #'files/find-file-horizontal-split)
+
+;; follow windows by default
+(map! :leader
+      :desc "Vertical split and follow"
+      "w v" #'+evil/window-vsplit-and-follow)
+
+(map! :leader
+      :desc "Vertical split"
+      "w V" #'evil-window-vsplit)
+
+(map! :leader
+      :desc "Horizontal split and follow"
+      "w s" #'+evil/window-split-and-follow)
+
+(map! :leader
+      :desc "Horizontal split"
+      "w S" #'evil-window-split)
+
 
 
 (defun my/vterm-auto-insert-state (&rest _)
