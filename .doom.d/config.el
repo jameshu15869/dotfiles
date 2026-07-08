@@ -112,6 +112,11 @@
   :config
   (map! "C-}" #'tab-line-switch-to-next-tab)
   (map! "C-{" #'tab-line-switch-to-prev-tab)
+  (map! "C-<tab>" #'tab-line-switch-to-next-tab)
+  (map! :map (evil-normal-state-map evil-visual-state-map evil-insert-state-map)
+        "C-<tab>" nil
+        :n "C-c y" #'aya-create)
+  (map! "C-<iso-lefttab>" #'tab-line-switch-to-prev-tab)
   (defun my/tab-line-select-visible-nth-tab (n)
     "Tab to switch to, 1-indexed. Will truncate to number of buffers in window."
     (let* ((tabs (tab-line-tabs-fixed-window-buffers))
