@@ -313,3 +313,5 @@
   :ensure t
   :config
   (super-save-mode +1))
+
+(add-to-list 'auto-mode-alist '("\\.conf\\'" . fundamental-mode))
