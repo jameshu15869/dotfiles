@@ -71,7 +71,11 @@ keybind = windows/q=close_surface
 keybind = chain=deactivate_key_table
 keybind = windows/escape=deactivate_key_table
 
-keybind = alt+h=goto_split:left
-keybind = alt+l=goto_split:right
-keybind = alt+k=goto_split:up
-keybind = alt+j=goto_split:down
+keybind = windows/h=goto_split:left
+keybind = chain=deactivate_key_table
+keybind = windows/l=goto_split:right
+keybind = chain=deactivate_key_table
+keybind = windows/k=goto_split:up
+keybind = chain=deactivate_key_table
+keybind = windows/j=goto_split:down
+keybind = chain=deactivate_key_table
