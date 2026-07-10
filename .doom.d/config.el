@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+;; (setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -82,10 +82,6 @@
 (load! "pkg/denote.el")
 
 (map! :leader
-      (:prefix ("o" . "open")
-       :desc "Projectile vterm" "v" #'projectile-run-vterm))
-
-(map! :leader
       (:prefix ("TAB" . "workspace")
        :desc "Other workspace" "TAB" #'+workspace/other
        :desc "Display" "`" #'+workspace/display))
@@ -132,33 +128,6 @@
              (interactive)
              (my/tab-line-select-visible-nth-tab ,i)))))
 
-;; (after! centaur-tabs
-;;   (map!) "C-}" #'centaur-tabs-forward
-;;         "C-{" #'centaur-tabs-backward)
-;;   (dotimes (i 9)
-;;     (map! :n (format "M-%d" i)
-;;           `(lambda ()
-;;              (interactive)
-;;              (centaur-tabs-select-visible-nth-tab ,i)))))
-
-(defun files/find-file-vertical-split ()
-  (interactive)
-  (+evil/window-vsplit-and-follow)
-  (call-interactively #'projectile-find-file))
-
-(map! :leader
-      :desc "Open file vertical split"
-      "f v" #'files/find-file-vertical-split)
-
-(defun files/find-file-horizontal-split ()
-  (interactive)
-  (+evil/window-split-and-follow)
-  (call-interactively #'projectile-find-file))
-
-(map! :leader
-      :desc "Open file horizontal split"
-      "f h" #'files/find-file-horizontal-split)
-
 ;; follow windows by default
 (map! :leader
       :desc "Vertical split and follow"
@@ -176,17 +145,6 @@
       :desc "Horizontal split"
       "w S" #'evil-window-split)
 
-
-
-(defun my/vterm-auto-insert-state (&rest _)
-  (when (and (eq major-mode 'vterm-mode)
-             (not (evil-insert-state-p)))
-    (evil-insert-state)))
-
-;; (set-evil-initial-state! 'vterm-mode 'insert)
-;; (add-hook 'window-selection-change-functions #'my/vterm-auto-insert-state)
-;; (add-hook 'window-buffer-change-functions #'my/vterm-auto-insert-state)
-
 (after! vterm
   (remove-hook 'vterm-mode-hook #'mode-line-invisible-mode))
 
@@ -201,16 +159,6 @@
       "C-x j" #'evil-window-down
       "C-x k" #'evil-window-up
       "C-x l" #'evil-window-right)
-
-(map! :leader
-      (:prefix ("w" . "window")
-       :desc "Delete window" "q" #'+workspace/close-window-or-workspace))
-;; Unmap default so we can build good muscle memory
-(map! :leader
-      (:prefix ("w" . "window")
-       :desc "Delete window" "q" #'delete-window
-       "d" nil))
-
 (after! vterm
   (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert))
 
@@ -227,15 +175,6 @@
 
 (map! :v "v" #'er/expand-region
       :v "V" #'er/contract-region)
-
-
-(defun new-workspace-with-vterm ()
-  "Create a new workspace with vterm inside the current project"
-  (interactive)
-  (+workspace/new)
-  (+vterm/here nil))
-(after! persp-mode
-  (map! "C-x TAB t" #'new-workspace-with-vterm))
 
 ;; make it easier to clone + add as a projectile project
 (add-hook 'magit-post-clone-hook
