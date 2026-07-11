@@ -20,6 +20,26 @@
           (forward-line 1))
         t)))
 
+(defun magit-section-strict-forward-sibling ()
+  (interactive)
+  (cond-let
+    [[current (magit-current-section)]]
+    ((not (oref current parent))
+     (magit-section-goto 1))
+    ([next (car (magit-section-siblings current 'next))]
+     (magit-section-goto next))
+    ((user-error "No next sibling"))))
+
+(defun magit-section-strict-backward-sibling ()
+  (interactive)
+  (cond-let
+    [[current (magit-current-section)]]
+    ((not (oref current parent))
+     (magit-section-goto 1))
+    ([previous (car (magit-section-siblings current 'prev))]
+     (magit-section-goto previous))
+    ((user-error "No prev sibling"))))
+
 (after! magit
   :config
   (setq fill-column 72)
@@ -27,5 +47,5 @@
   ;; (add-hook! 'with-editor-finish-query-functions #'my/test-skeleton)
   (add-hook! 'git-commit-mode-hook #'display-fill-column-indicator-mode)
   (map! :map 'magit-mode-map :n "z u" #'magit-section-up
-        :map 'magit-mode-map :n "C-j" #'magit-section-forward-sibling
-        :map 'magit-mode-map :n "C-k" #'magit-section-backward-sibling))
+        :map 'magit-mode-map :n "C-j" #'magit-section-strict-forward-sibling
+        :map 'magit-mode-map :n "C-k" #'magit-section-strict-backward-sibling))
