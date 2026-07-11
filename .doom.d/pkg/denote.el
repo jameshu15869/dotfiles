@@ -12,6 +12,7 @@
    ("C-c n g" . denote-grep))
   :config
   (setq denote-directory (expand-file-name "~/Dropbox/notes"))
+  (setq denote-file-type 'markdown-yaml)
 
   ;; Automatically rename Denote buffers when opening them so that
   ;; instead of their long file name they have, for example, a literal
