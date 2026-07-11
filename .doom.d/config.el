@@ -80,6 +80,7 @@
 
 (load! "pkg/magit.el")
 (load! "pkg/denote.el")
+(load! "pkg/markdown.el")
 
 (map! :leader
       (:prefix ("TAB" . "workspace")

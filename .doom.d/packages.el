@@ -54,3 +54,4 @@
 ;; (unpin! t)
 (package! denote)
 (package! super-save)
+(package! markdown-indent-mode)
