@@ -2,7 +2,11 @@ let mapleader=" "
 " pending update https://github.com/TheBlob42/idea-which-key/issues/113
 " set which-key
 
-Plug 'vim-scripts/argtextobj.vim'
+set incsearch
+set hlsearch
+
+" Plug 'vim-scripts/argtextobj.vim'
+set anyobject
 
 Plug 'bkad/CamelCaseMotion'
 map <silent> w <Plug>CamelCaseMotion_w
