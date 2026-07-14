@@ -247,10 +247,13 @@
 (dolist (hook '(inferior-python-mode-hook eshell-mode-hook))
   (add-hook hook (lambda () (corfu-mode -1))))
 
+(defun my/set-plaintext-autofill ()
+  (auto-fill-mode 1))
 (after! org
-  (map! :map org-mode-map
-        :m "j" #'evil-next-visual-line
-        :m "k" #'evil-previous-visual-line))
+  (add-hook! 'org-mode-hook #'my/set-plaintext-autofill))
+
+(after! markdown-ts-mode
+  (add-hook! 'markdown-ts-mode-hook #'my/set-plaintext-autofill))
 
 (use-package! super-save
   :ensure t
