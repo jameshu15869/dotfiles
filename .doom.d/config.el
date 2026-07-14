@@ -146,6 +146,9 @@
       :desc "Horizontal split"
       "w S" #'evil-window-split)
 
+(map! :n "H" #'evil-window-left
+      :n "L" #'evil-window-right)
+
 (after! vterm
   (remove-hook 'vterm-mode-hook #'mode-line-invisible-mode))
 
