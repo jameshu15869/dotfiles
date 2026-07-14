@@ -1,0 +1,196 @@
+#!/bin/env python3
+
+FACTORIAL_BASE = """
+# Python program to find the factorial of a number provided by the user.
+
+# change the value for a different result
+num = 7
+
+# To take input from the user
+#num = int(input("Enter a number: "))
+
+factorial = 1
+
+# check if the number is negative, positive or zero
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+"""
+
+FACTORIAL_HOTFIX = """
+# Python program to find the factorial of a number provided by the user.
+
+# change the value for a different result
+num = 10
+
+# To take input from the user
+#num = int(input("Enter a number: "))
+
+factorial = 1
+
+# check if the number is negative, positive or zero
+if num < 0:
+   print("Error: factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = i * factorial
+   print("The factorial of",num,"is",factorial)
+"""
+
+FACTORIAL_FEATURE = """
+# Python program to find the factorial of a number provided by the user.
+
+# change the value for a different result
+num = 5
+
+# To take input from the user
+#num = int(input("Enter a number: "))
+
+factorial = 1
+
+# check if the number is negative, positive or zero
+if num = 0:
+   print("The factorial of 0 is 1")
+elif num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+else:
+   for i in range(1,num + 1):
+       print("<placeholder for some logging / other work>")
+       factorial = factorial * i
+   print("The factorial of",num,"is",factorial)
+"""
+
+README_BASE = """
+this is the readme file that will have simple merge conflicts
+
+dogs
+cats
+tigers
+lions
+dolphins
+rhinos
+raptors
+"""
+
+README_HOTFIX = """
+this is the readme file that will have simple merge conflicts
+
+dogs
+cats
+tigers
+panthers
+jaguars
+dolphins
+rhinos
+stegosauraus
+"""
+
+README_FEATURE = """
+this is the readme file that will have simple merge conflicts
+
+dogs
+cats
+tigers
+puma
+dolphins
+rhinos
+pteryodactyl
+"""
+
+import argparse
+import pathlib
+import sys
+import subprocess
+import os
+import shutil
+
+
+def run_git_command(command, repo_path: pathlib.Path):
+    try:
+        result = subprocess.run(
+            command, cwd=repo_path, check=True, text=True, capture_output=True
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        print(f"Error occured in git command {command}: {e.stderr}", file=sys.stderr)
+        return None
+
+
+def delete_directory_contents(dir: pathlib.Path):
+    for filename in os.listdir(dir):
+        file_path = os.path.join(dir, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print("Failed to delete %s. Reason: %s" % (file_path, e), file=sys.stderr)
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "path",
+    help="The directory to instantiate in. Must not already exist",
+    type=pathlib.Path,
+)
+
+args = parser.parse_args()
+target = args.path
+
+if target.exists():
+    if not target.is_dir():
+        print("Error: provided path is not a directory", file=sys.stderr)
+        sys.exit(1)
+    elif any(target.iterdir()):
+        confirmation = (
+            input(
+                "This will delete the contents of the target directory. Proceed? (y/n): "
+            )
+            .strip()
+            .lower()
+        )
+        if confirmation not in ("y", "yes"):
+            print("Operation cancelled.")
+            sys.exit(1)
+        delete_directory_contents(target)
+
+
+target.mkdir(parents=True, exist_ok=True)
+os.chdir(target)
+
+run_git_command(["git", "init"], target)
+
+factorial_path = target / "factorial.py"
+readme_path = target / "README.md"
+
+
+def write_contents(target_path: pathlib.Path, contents: str):
+    with open(target_path, "w+") as f:
+        f.write(contents)
+
+
+write_contents(factorial_path, FACTORIAL_BASE)
+write_contents(readme_path, README_BASE)
+
+run_git_command(["git", "add", "."], target)
+run_git_command(["git", "commit", "-m", "initial commit"], target)
+
+run_git_command(["git", "checkout", "-b", "feature"], target)
+write_contents(factorial_path, FACTORIAL_FEATURE)
+write_contents(readme_path, README_FEATURE)
+run_git_command(["git", "commit", "-am", "work on the feature branch"], target)
+
+run_git_command(["git", "checkout", "main"], target)
+write_contents(factorial_path, FACTORIAL_HOTFIX)
+write_contents(readme_path, README_HOTFIX)
+run_git_command(["git", "commit", "-am", "urgent hotfix"], target)
+
+run_git_command(["git", "merge", "feature"], target)
