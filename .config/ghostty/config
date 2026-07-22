@@ -51,6 +51,8 @@ font-family = "Monaspace Neon NF"
 shell-integration="fish"
 command = "/usr/bin/env fish"
 
+keybind = ctrl+backspace=text:\x1b\x7f
+
 # Tab management
 keybind = ctrl+;>t=activate_key_table:tabs
 
