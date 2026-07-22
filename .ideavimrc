@@ -4,6 +4,8 @@ let mapleader=" "
 
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 " Plug 'vim-scripts/argtextobj.vim'
 set anyobject
