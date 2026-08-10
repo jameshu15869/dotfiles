@@ -54,7 +54,7 @@ command = "/usr/bin/env fish"
 keybind = ctrl+backspace=text:\x1b\x7f
 
 # Tab management
-keybind = ctrl+;>t=activate_key_table:tabs
+keybind = ctrl+b>t=activate_key_table:tabs
 
 keybind = tabs/n=new_tab
 keybind = chain=deactivate_key_table
@@ -63,7 +63,7 @@ keybind = chain=deactivate_key_table
 keybind = tabs/escape=deactivate_key_table
 
 # Window management
-keybind = ctrl+;>w=activate_key_table:windows
+keybind = ctrl+b>w=activate_key_table:windows
 
 keybind = windows/s=new_split:down
 keybind = chain=deactivate_key_table
