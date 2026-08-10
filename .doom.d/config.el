@@ -108,7 +108,9 @@
   :hook (after-init . global-tab-line-mode)
   :config
   (map! "C-}" #'tab-line-switch-to-next-tab)
+  (map! "C-<next>" #'tab-line-switch-to-next-tab)
   (map! "C-{" #'tab-line-switch-to-prev-tab)
+  (map! "C-<prior>" #'tab-line-switch-to-prev-tab)
   (map! "C-<tab>" #'tab-line-switch-to-next-tab)
   (map! :map (evil-normal-state-map evil-visual-state-map evil-insert-state-map)
         "C-<tab>" nil
