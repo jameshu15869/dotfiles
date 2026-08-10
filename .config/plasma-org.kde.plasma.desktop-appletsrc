@@ -5,18 +5,6 @@ RightButton;NoModifier=org.kde.contextmenu
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
 
-[Containments][54]
-ItemGeometries-1920x1080=
-ItemGeometries-2743x1543=
-ItemGeometriesHorizontal=
-activityId=7f6fbd65-a2c0-40cd-be80-89b5bddb66ca
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
 [Containments][55]
 activityId=
 formfactor=2
@@ -53,6 +41,9 @@ showWindowOutlines=false
 [Containments][55][Applets][58]
 immutability=1
 plugin=org.kde.plasma.icontasks
+
+[Containments][55][Applets][58][Configuration][General]
+launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser
 
 [Containments][55][Applets][59]
 immutability=1
@@ -162,6 +153,25 @@ plugin=org.kde.plasma.showdesktop
 
 [Containments][55][General]
 AppletOrder=56;57;58;59;60;75;76
+
+[Containments][77]
+ItemGeometries-1536x960=
+ItemGeometriesHorizontal=
+activityId=a7332203-a16e-4881-8f32-cea309dff825
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][77][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][77][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/ScarletTree/
+SlidePaths=/usr/share/wallpapers/
 
 [ScreenMapping]
 itemsOnDisabledScreens=

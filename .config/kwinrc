@@ -18,6 +18,10 @@ NightTemperature=3000
 [Plugins]
 slideEnabled=false
 
+[Tiling][22c66afc-68be-4b09-bc6c-af7400524aea][4c5c47f4-83a9-4f16-9e1e-82318142c7c6]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][22c66afc-68be-4b09-bc6c-af7400524aea][ba6f8819-1a49-432f-a554-807d756bbdb3]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -26,11 +30,19 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][4a568b82-85b5-4b2c-a084-00022db977a8][4c5c47f4-83a9-4f16-9e1e-82318142c7c6]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][4a568b82-85b5-4b2c-a084-00022db977a8][ba6f8819-1a49-432f-a554-807d756bbdb3]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][4a568b82-85b5-4b2c-a084-00022db977a8][bf964eed-14ff-4ed3-975f-201a4ece6695]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][9d7d1138-17a1-4006-a884-5729a4396c27][4c5c47f4-83a9-4f16-9e1e-82318142c7c6]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -46,11 +58,19 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5},{"width":0.5}]}
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][d73ac96b-fec8-4153-8298-0e846192eff2][4c5c47f4-83a9-4f16-9e1e-82318142c7c6]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][d73ac96b-fec8-4153-8298-0e846192eff2][ba6f8819-1a49-432f-a554-807d756bbdb3]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][d73ac96b-fec8-4153-8298-0e846192eff2][bf964eed-14ff-4ed3-975f-201a4ece6695]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][eb11fee1-ae93-4066-be27-bb16e1d0d6c1][4c5c47f4-83a9-4f16-9e1e-82318142c7c6]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -63,4 +83,4 @@ padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Xwayland]
-Scale=1
+Scale=1.25
