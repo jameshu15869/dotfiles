@@ -12,7 +12,7 @@
  '(lsp-rust-analyzer-display-closure-return-type-hints t)
  '(org-agenda-files '("~/Dropbox/org/trip.org"))
  '(org-export-with-broken-links 'mark)
- '(package-selected-packages '(eglot))
+ '(package-selected-packages '(eglot super-save))
  '(save-interprogram-paste-before-kill t)
  '(treemacs-position 'right)
  '(which-key-idle-delay 0.1))
