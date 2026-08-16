@@ -82,6 +82,7 @@
 (load! "pkg/denote.el")
 (load! "pkg/markdown.el")
 (load! "pkg/xclip.el")
+(load! "pkg/avy.el")
 
 (map! :leader
       (:prefix ("TAB" . "workspace")
