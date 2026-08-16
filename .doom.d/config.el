@@ -45,7 +45,7 @@
 ;; (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18))
 ;; unfortunately I don't think it's possible to get the nice texture healing on
 ;; emacs: https://github.com/harfbuzz/harfbuzz/discussions/4490#discussioncomment-7566290
-(setq doom-font (font-spec :family "Monaspace Neon Frozen" :size 18))
+(setq doom-font (font-spec :family "Monaspace Neon NF" :size 18))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
@@ -127,7 +127,6 @@
         (switch-to-buffer candidate-tab))))
   (my/set-tab-line-theme)
   (dotimes (i 9)
-    (message (format "hi: %d" i))
     (map! :nvi (format "M-%d" i)
           `(lambda ()
              (interactive)
@@ -169,15 +168,6 @@
       "C-x l" #'evil-window-right)
 (after! vterm
   (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert))
-
-;; Make Cargo and compilation popups take up a big part of the screen
-;; and focus
-;; (disclaimer: from LLM)
-(after! (compile rustic)
-  (set-popup-rule! "^\\*\\(cargo\\|compilation\\|rustic-compilation\\)"
-    :size 0.7
-    :select t
-    :quit t))
 
 (map! "C-x C-x" #'ace-window)
 
