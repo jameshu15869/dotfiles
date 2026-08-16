@@ -259,3 +259,10 @@
 
 ;; hyper key toolbelt
 (map! :nvi  "C-S-<f12>" 'projectile-repeat-last-command)
+
+(setq display-buffer-alist
+      '(
+        ("^\\*\\([Hh]elp\\|Apropos\\)"
+         (display-buffer-reuse-mode-window display-buffer-below-selected)
+         (dedicated . t))
+        ))
