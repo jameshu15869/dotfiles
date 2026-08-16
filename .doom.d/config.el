@@ -232,6 +232,7 @@
 (setq projectile-indexing-method 'alien)
 
 (map! :nvi "M-w" 'kill-current-buffer)
+(map! :nvi  "M-o" 'ace-window)
 
 (defun my/run-python-same-window ()
   (interactive)
@@ -264,3 +265,6 @@
   (super-save-mode +1))
 
 (add-to-list 'auto-mode-alist '("\\.conf\\'" . fundamental-mode))
+
+;; hyper key toolbelt
+(map! :nvi  "C-S-<f12>" 'projectile-repeat-last-command)
