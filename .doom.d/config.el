@@ -83,6 +83,7 @@
 (load! "pkg/markdown.el")
 (load! "pkg/xclip.el")
 (load! "pkg/avy.el")
+(load! "pkg/super-save.el")
 
 (map! :leader
       (:prefix ("TAB" . "workspace")
@@ -114,10 +115,6 @@
   (map! "C-{" #'tab-line-switch-to-prev-tab)
   (map! "C-<prior>" #'tab-line-switch-to-prev-tab)
   (map! "C-<tab>" #'tab-line-switch-to-next-tab)
-  (map! :map (evil-normal-state-map evil-visual-state-map evil-insert-state-map)
-        "C-<tab>" nil
-        :n "C-c y" #'aya-create)
-  (map! "C-<iso-lefttab>" #'tab-line-switch-to-prev-tab)
   (defun my/tab-line-select-visible-nth-tab (n)
     "Tab to switch to, 1-indexed. Will truncate to number of buffers in window."
     (let* ((tabs (tab-line-tabs-fixed-window-buffers))
@@ -158,18 +155,8 @@
 (after! eshell
   (remove-hook 'eshell-mode-hook #'mode-line-invisible-mode))
 
-;; Terminal movement commands while in insert or normal mode
-(after! persp-mode
-  (map! "C-x TAB" doom-leader-workspace-map))
-(map! :nvi
-      "C-x h" #'evil-window-left
-      "C-x j" #'evil-window-down
-      "C-x k" #'evil-window-up
-      "C-x l" #'evil-window-right)
 (after! vterm
   (define-key vterm-mode-map (kbd "C-c C-c") #'vterm--self-insert))
-
-(map! "C-x C-x" #'ace-window)
 
 (map! :v "v" #'er/expand-region
       :v "V" #'er/contract-region)
@@ -181,18 +168,6 @@
               (projectile-add-known-project dir)
               ;; Automatically switch to the project (opens dired/file list)
               (projectile-switch-project-by-name dir))))
-
-(map! :after smerge-mode
-      :map smerge-mode-map
-      :prefix "C-c m"  ;; your custom prefix
-      "n" #'smerge-next
-      "p" #'smerge-prev
-      "u" #'smerge-keep-upper
-      "l" #'smerge-keep-lower
-      "a" #'smerge-keep-all
-      "RET" #'smerge-keep-current)
-
-(map! :n "g w" #'evil-avy-goto-word-0)
 
 (setq vterm-shell (or (executable-find "fish")
                       (executable-find "bash")))
@@ -224,6 +199,7 @@
 
 (map! :nvi "M-w" 'kill-current-buffer)
 (map! :nvi  "M-o" 'ace-window)
+(map! :n  "g o" 'evil-avy-goto-char-timer)
 
 (defun my/run-python-same-window ()
   (interactive)
@@ -246,15 +222,10 @@
   (auto-fill-mode 1))
 (after! org
   (add-hook! 'org-mode-hook #'my/set-plaintext-autofill))
-
 (after! markdown-ts-mode
   (add-hook! 'markdown-ts-mode-hook #'my/set-plaintext-autofill))
 
-(use-package! super-save
-  :ensure t
-  :config
-  (super-save-mode +1))
-
+;; keyd conf highlighting breaks because of symbols
 (add-to-list 'auto-mode-alist '("\\.conf\\'" . fundamental-mode))
 
 ;; hyper key toolbelt
