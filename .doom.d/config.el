@@ -85,11 +85,6 @@
 (load! "pkg/avy.el")
 (load! "pkg/super-save.el")
 
-(map! :leader
-      (:prefix ("TAB" . "workspace")
-       :desc "Other workspace" "TAB" #'+workspace/other
-       :desc "Display" "`" #'+workspace/display))
-
 (defun my/save-all-buffers-before-doom-reload ()
   "Save all modified buffers before reloading Doom."
   (interactive)
@@ -236,4 +231,10 @@
         ("^\\*\\([Hh]elp\\|Apropos\\)"
          (display-buffer-reuse-mode-window display-buffer-below-selected)
          (dedicated . t))
+
+        ("^\\*compilation"
+         (display-buffer-use-some-window display-buffer-below-selected))
+
+        ("^\\*cargo-test*"
+         (display-buffer-use-some-window display-buffer-below-selected))
         ))
