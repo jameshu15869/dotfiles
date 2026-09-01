@@ -51,33 +51,33 @@ font-family = "Monaspace Neon NF"
 shell-integration="fish"
 command = "/usr/bin/env fish"
 
-keybind = ctrl+backspace=text:\x1b\x7f
+# keybind = ctrl+backspace=text:\x1b\x7f
 
-# Tab management
-keybind = ctrl+b>t=activate_key_table:tabs
+# # Tab management
+# keybind = ctrl+b>t=activate_key_table:tabs
 
-keybind = tabs/n=new_tab
-keybind = chain=deactivate_key_table
-keybind = tabs/d=close_tab
-keybind = chain=deactivate_key_table
-keybind = tabs/escape=deactivate_key_table
+# keybind = tabs/n=new_tab
+# keybind = chain=deactivate_key_table
+# keybind = tabs/d=close_tab
+# keybind = chain=deactivate_key_table
+# keybind = tabs/escape=deactivate_key_table
 
-# Window management
-keybind = ctrl+b>w=activate_key_table:windows
+# # Window management
+# keybind = ctrl+b>w=activate_key_table:windows
 
-keybind = windows/s=new_split:down
-keybind = chain=deactivate_key_table
-keybind = windows/v=new_split:right
-keybind = chain=deactivate_key_table
-keybind = windows/q=close_surface
-keybind = chain=deactivate_key_table
-keybind = windows/escape=deactivate_key_table
+# keybind = windows/s=new_split:down
+# keybind = chain=deactivate_key_table
+# keybind = windows/v=new_split:right
+# keybind = chain=deactivate_key_table
+# keybind = windows/q=close_surface
+# keybind = chain=deactivate_key_table
+# keybind = windows/escape=deactivate_key_table
 
-keybind = windows/h=goto_split:left
-keybind = chain=deactivate_key_table
-keybind = windows/l=goto_split:right
-keybind = chain=deactivate_key_table
-keybind = windows/k=goto_split:up
-keybind = chain=deactivate_key_table
-keybind = windows/j=goto_split:down
-keybind = chain=deactivate_key_table
+# keybind = windows/h=goto_split:left
+# keybind = chain=deactivate_key_table
+# keybind = windows/l=goto_split:right
+# keybind = chain=deactivate_key_table
+# keybind = windows/k=goto_split:up
+# keybind = chain=deactivate_key_table
+# keybind = windows/j=goto_split:down
+# keybind = chain=deactivate_key_table
